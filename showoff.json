@@ -1,1 +1,9 @@
-{ "name": "My Preso", "sections": [ {"section":"one"} ]}
+{ 
+  "name": "Image Kit Programming", 
+  "sections": [ 
+    {"section":"intro"},
+    {"section":"basics"}, 
+    {"section":"browser"}, 
+    {"section":"demo"} 
+  ]
+}

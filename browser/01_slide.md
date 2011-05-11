@@ -1,5 +1,5 @@
 !SLIDE 
-# My Presentation #
+# Building An Image Browser #
 
 !SLIDE bullets incremental
 # Bullet Points #
