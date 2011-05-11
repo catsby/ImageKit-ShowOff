@@ -26,8 +26,9 @@ Estimated time: 5-7 minutes
 
 ##TOC
 
-1. Basic Tasks
-2. Building an image browser
+1. Intro
+2. Basic Tasks
+3. Building an image browser
 3. Hacky demo
 
 [1]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Conceptual/ImageKitProgrammingGuide/Introduction/Introduction.html
