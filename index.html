@@ -72,8 +72,30 @@
 </div>
 
 <div id="slides" class="offscreen" style="display:none;">
-<div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/1">
+<div class="slide" data-transition="none"><div class="content" ref="stupid_pictures_of_zack/01_slide/1">
 <h1>Image Kit Programming</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="stupid_pictures_of_zack/01_slide/2">
+<h1>But First</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="stupid_pictures_of_zack/01_slide/3">
+<h1>Contratulations Grads</h1>
+
+<p><img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/stupid_pictures_of_zack/zack.jpeg" width="250" height="250" alt="zack"/></p>
+
+<p>To Zack and other grads.</p>
+
+<p><em>(I don't know who the others are)</em></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content 2_zacks" ref="stupid_pictures_of_zack/01_slide/4">
+<h1>Contratulations Grads</h1>
+
+<p><img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/stupid_pictures_of_zack/2_zacks.jpeg" width="720" height="411" alt="zack"/></p>
+
+<p>You've come so far</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/1">
+<h1>Image Kit</h1>
 </div>
 </div><div class="slide" data-transition="none"><div class="content bullets pretty-uls" ref="intro/01_slide/2">
 <h2>Intro</h2>
@@ -206,52 +228,7 @@
 </div><div class="slide" data-transition="none"><div class="content" ref="browser/01_slide">
 <h1>Building An Image Browser</h1>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_controller/1">
-<h1>ImageBrowserController.h</h1>
-
-<pre class="sh_C"><code>@interface ImageBrowserController : NSWindowController {
-
-    IBOutlet id mImageBrowser;
-    NSMutableArray * mImages;
-    NSMutableArray * mImportedImages;
-}
-
-- (IBAction) addImageButtonClicked:(id) sender;
-@end</code></pre>
-</div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_controller/2">
-<h1>ImageBrowserController.m</h1>
-
-<pre class="sh_C"><code>- (void) awakeFromNib
-{
-    mImages = [[NSMutableArray alloc] init];
-    mImportedImages = [[NSMutableArray alloc] init];
-
-    [mImageBrowser setAnimates:YES];
-}
-- (void) updateDatasource
-{
-    [mImages addObjectsFromArray:mImportedImages];
-    [mImportedImages removeAllObjects];
-    [mImageBrowser reloadData];
-}</code></pre>
-</div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_controller/3">
-<h1>ImageBrowserController.m</h1>
-
-<h3>Data Source Methods</h3>
-
-<pre class="sh_C"><code>- (int) numberOfItemsInImageBrowser:(IKImageBrowserView *) view
-{
-    return [mImages count];
-}
-
-- (id) imageBrowser:(IKImageBrowserView *) view itemAtIndex:(int) index
-{
-    return [mImages objectAtIndex:index];
-}</code></pre>
-</div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_item/1">
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_item/1">
 <h1>ImageBrowserItem.h</h1>
 
 <pre class="sh_C"><code>@interface ImageBrowserItem: NSObject {
@@ -265,7 +242,7 @@
 - (NSString *) imageUID
 @end</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_item/2">
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_item/2">
 <h1>ImageBrowserItem.m</h1>
 
 <pre class="sh_C"><code>
@@ -286,16 +263,176 @@
     return mPath;
 }</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="demo/01_slide/1">
-<h1>Hackie Demo</h1>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/1">
+<h1>ImageBrowserController.h</h1>
+
+<pre class="sh_C"><code>@interface ImageBrowserController : NSWindowController {
+
+    IBOutlet id mImageBrowser;
+    NSMutableArray * mImages;
+    NSMutableArray * mImportedImages;
+}
+
+- (IBAction) addImageButtonClicked:(id) sender;
+@end</code></pre>
 </div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="demo/01_slide/2">
-<h1>Bullet Points</h1>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/2">
+<h1>ImageBrowserController.m</h1>
+
+<pre class="sh_C"><code>- (void) awakeFromNib
+{
+    mImages = [[NSMutableArray alloc] init];
+    mImportedImages = [[NSMutableArray alloc] init];
+
+    [mImageBrowser setAnimates:YES];
+}
+- (void) updateDatasource
+{
+    [mImages addObjectsFromArray:mImportedImages];
+    [mImportedImages removeAllObjects];
+    [mImageBrowser reloadData];
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/3">
+<h1>ImageBrowserController.m</h1>
+
+<h3>Data Source Methods</h3>
+
+<pre class="sh_C"><code>- (int) numberOfItemsInImageBrowser:(IKImageBrowserView *) view
+{
+    return [mImages count];
+}
+
+- (id) imageBrowser:(IKImageBrowserView *) view itemAtIndex:(int) index
+{
+    return [mImages objectAtIndex:index];
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/4">
+<h1>ImageBrowserController.m</h1>
+
+<pre class="sh_C"><code>- (IBAction) addImageButtonClicked:(id) sender
+{
+    // static method that opens a file open dialog
+    NSArray *path = openFiles(); 
+
+    if(!path){
+        return;
+    }
+   [NSThread 
+    detachNewThreadSelector:@selector(addImagesWithPaths:) 
+                   toTarget:self 
+                 withObject:path];
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/5">
+<h1>ImageBrowserController.m</h1>
+
+<pre class="sh_C"><code>- (void) addImagesWithPaths:(NSArray *) paths 
+{
+  //  foreach path
+  [self addImagesWithPath:path recursive:NO];
+
+  ...  //   Back to you later 
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/6">
+<h1>ImageBrowserController.m</h1>
+
+<pre class="sh_C"><code>- (void) addImagesWithPath:(NSString *) 
+            path recursive:(BOOL) recursive
+{
+  //  a bunch of recursive nonsense
+  //  that optionally digs down through 
+  //  through directories and eventually calls
+  NSArray *content = [[NSFileManager defaultManager]
+                       directoryContentsAtPath:path];
+
+  [self addAnImageWithPath:
+   [path stringByAppendingPathComponent:
+                 [content objectAtIndex:i]]];
+  //  on each path
+
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/7">
+<h1>ImageBrowserController.m</h1>
+
+<pre class="sh_C"><code>- (void) addAnImageWithPath:(NSString *) path
+{
+    MyImageObject *p;
+
+    p = [[MyImageObject alloc] init];
+    [p setPath:path];
+    [mImportedImages addObject:p];
+    [p release];
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_controller/8">
+<h1>ImageBrowserController.m</h1>
+
+<h3>Back in <code>addImagesWithPath:</code></h3>
+
+<pre class="sh_C"><code>- (void) addImagesWithPaths:(NSArray *) paths 
+{
+  ...   //  Aaaaaand we're back
+  [self 
+  performSelectorOnMainThread:@selector(updateDatasource)
+                   withObject:nil
+                waitUntilDone:YES];
+
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets pretty-uls" ref="browser/04_other/1">
+<h1>Other Stuff</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets pretty-uls" ref="browser/04_other/2">
+<h1>Data Source Stuff</h1>
 
 <ul>
-<li>first point</li>
-<li>second point</li>
-<li>third point</li>
+<li>Drag &amp; Drop</li>
+<li>Reordering</li>
+<li>Deleting</li>
+<li>Grouping</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets pretty-uls" ref="browser/04_other/3">
+<h1>Browser and Cell Stuff</h1>
+
+<ul>
+<li>Cell style masks (Shadowed, Outlined, Titled, SubTitled)</li>
+<li>Constrains to original size  (<strong>not</strong> what she said)</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets pretty-uls" ref="browser/04_other/4">
+<h1>Browser and Cell Stuff</h1>
+
+<ul>
+<li>Cell style masks (Shadowed, Outlined, Titled, SubTitled)</li>
+<li>Constrains to original size  (<strong>not</strong> what she said)</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="demo/01_slide/1">
+<h1>Demo</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="demo/01_slide/2">
+<h1>Hackie Demo</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smbullets ship-it pretty-uls" ref="end/01_end">
+<h1>End</h1>
+
+<h2>Clint Shryock (@ctshryock)</h2>
+
+<h2>clint@ctshryock.com</h2>
+
+<h3>Learn more</h3>
+
+<ul>
+<li><a href="https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Conceptual/ImageKitProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40004907-CH1-SW1">IKImage Programming Guide</a></li>
+<li><a href="https://developer.apple.com/library/mac/#samplecode/ImageBrowser/Introduction/Intro.html#//apple_ref/doc/uid/DTS10003997">Example Browser Code</a></li>
 </ul>
 
 </div>
