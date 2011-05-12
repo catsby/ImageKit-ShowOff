@@ -1,5 +1,5 @@
-!SLIDE 
-# Image Kit Programming #
+!SLIDE
+# Image Kit #
 
 !SLIDE bullets pretty-uls
 ## Intro ##

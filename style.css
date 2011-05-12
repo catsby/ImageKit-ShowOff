@@ -18,24 +18,6 @@ body {
 .pretty-uls ul li {
 	text-align: left;
 }
-
-.ship-it.content::after {
-      position: absolute;
-      right: 15px;
-      bottom: 200px;
-      content: url('end/ship_it_squirrel.png');
-}
-
-.ship-it h1 {
-	position: absolute;
-    top: 160px;
-    left: 15px
-}
-
-.ship-it {
-	padding: 15px;
-}
-
 .images img {
 	vertical-align: top;
 }
@@ -72,3 +54,37 @@ body {
 pre {
 	text-align: left;
 }
+
+.ship-it.content::after {
+      position: absolute;
+      right: 15px;
+      bottom: 200px;
+      content: url('end/ship_it_squirrel.png');
+}
+
+.ship-it h1 {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+}
+
+.ship-it h2 {
+	background: #fff;
+	color: #333;
+	text-align: left;
+	font-size: 2em;
+	margin: 0;
+	padding: 0;
+	padding-left: 15px;
+}
+
+.ship-it h3 {
+	margin-top: 45px;
+}
+
+.ship-it p {
+	padding-left: 15px;
+	text-align: left;
+	font-size: larger;
+}
+
