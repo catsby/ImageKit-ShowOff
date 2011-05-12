@@ -3,7 +3,7 @@
 
 ![IKImageView](plain_view.jpg)
 
-!SLIDE bullets incremental smbullets pretty-uls
+!SLIDE bullets smbullets pretty-uls
 ## IKImageView ##
 
 - Similar to any view that contains an image (**NSView**, **NSImage**)
