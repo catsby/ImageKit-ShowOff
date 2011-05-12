@@ -29,7 +29,7 @@ Estimated time: 5-7 minutes
 1. Intro
 2. Basic Tasks
 3. Building an image browser
-3. Hacky demo
+3. Hackie demo
 
 [1]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Conceptual/ImageKitProgrammingGuide/Introduction/Introduction.html
 [2]: https://developer.apple.com/library/mac/#documentation/GraphicsImaging/Conceptual/ImageKitProgrammingGuide/ImageBrowser/ImageBrowser.html#//apple_ref/doc/uid/TP40004907-CH5-SW1

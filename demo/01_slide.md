@@ -1,5 +1,5 @@
 !SLIDE 
-# Hacky Demo #
+# Hackie Demo #
 
 !SLIDE bullets incremental
 # Bullet Points #
