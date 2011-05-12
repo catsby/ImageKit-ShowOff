@@ -1,9 +1,11 @@
 { 
   "name": "Image Kit Programming", 
   "sections": [ 
+    {"section":"stupid_pictures_of_zack"},
     {"section":"intro"},
     {"section":"basics"}, 
     {"section":"browser"}, 
-    {"section":"demo"} 
+    {"section":"demo"},
+    {"section":"end"} 
   ]
 }
