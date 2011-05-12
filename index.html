@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>My Preso</title>
+  <title>Image Kit Programming</title>
 
   <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
   <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
@@ -27,6 +27,8 @@
   <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
   <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
 
+  
+    <link rel="stylesheet" href="file/style.css" type="text/css"/>
   
 
   
@@ -70,9 +72,224 @@
 </div>
 
 <div id="slides" class="offscreen" style="display:none;">
-<div class="slide" data-transition="none"><div class="content" ref="one/01_slide/1">
-<h1>My Presentation</h1></div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="one/01_slide/2">
+<div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/1">
+<h1>Image Kit Programming</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets pretty-uls" ref="intro/01_slide/2">
+<h2>Intro</h2>
+
+<ul>
+<li>Objective-C framework introduced in Mac OS X v10.5</li>
+<li>Browsing, viewing, editing, and processing images in an efficient manner</li>
+<li>Also supports browsing Core Image filters, previewing the effects, and providing controls for individual filters</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smbullets pretty-uls" ref="intro/01_slide/3">
+<h2>Basic Tasks</h2>
+
+<ul>
+<li>View and edit images</li>
+<li>Adjust images, apply color effects, view metadata</li>
+<li>Display and arrange large numbers of images</li>
+<li>Run slideshows</li>
+<li><em>Zoooooooooom</em></li>
+<li>Take a snapshot with an iSight or other digital camera</li>
+<li>Save images in a variety of file formats</li>
+<li>Browse Core Image filters and preview their effects</li>
+<li>View and adjust the input parameters of a Core Image filter</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/01_slide">
+<h1>Basics</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/02_IKImageView/1">
+<h1>IKImageView</h1>
+
+<p><img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/basics/plain_view.jpg" width="742" height="561" alt="IKImageView"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smbullets pretty-uls" ref="basics/02_IKImageView/2">
+<h2>IKImageView</h2>
+
+<ul>
+<li>Similar to any view that contains an image (<strong>NSView</strong>, <strong>NSImage</strong>)</li>
+<li>Double-clicks an image brings an <strong>Image Edit Panel</strong></li>
+<li>Set the appropriate <strong>image view state</strong></li>
+<li>Set up a <strong>shared instance</strong> of the Image Edit panel (<strong>IKImageEditPanel</strong>)</li>
+<li>Set the <strong>data source</strong></li>
+<li><strong>Image Kit framework</strong> takes care of the rest</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content images" ref="basics/02_IKImageView/3">
+<h2>IKImageView</h2>
+
+<p><img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/basics/adjustpane.jpg" width="280" height="380" alt="Adjust"/>
+<img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/basics/effectspane.jpg" width="330" height="447" alt="Effects"/>
+<img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/basics/detailspane1.jpg" width="280" height="379" alt="Details"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="basics/03_IKImageBrowserView/1">
+<h1>IKImageBrowserView</h1>
+
+<p><img src="file:///Users/clint/Projects/ctshryock/ImageKit-ShowOff/basics/imagebrowser_02.jpg" width="648" height="551" alt="IKImageBrowserView"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smbullets pretty-uls mini-browser-1" ref="basics/03_IKImageBrowserView/2">
+<h2>IKImageBrowserView</h2>
+
+<ul>
+<li>Display a <strong>collection of images</strong></li>
+<li>Item size depends on <strong>zoom</strong> value</li>
+<li>Support for <strong>drag and drop</strong></li>
+<li>Set <strong>IKImageBrowserDataSource</strong></li>
+<li>Set <strong>IKImageBrowserDelegate</strong></li>
+<li>Create <strong>IKImageBrowserItem</strong> objects</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smbullets pretty-uls mini-browser" ref="basics/04_IKImageBrowserViewParts/1">
+<h2>IKImageBrowserDataSource</h2>
+
+<h3>Required:</h3>
+
+<ul>
+<li><code>numberOfItemsInImageBrowser:</code></li>
+<li><code>imageBrowser:itemAtIndex:</code></li>
+</ul>
+
+
+<h3>Optional:</h3>
+
+<ul>
+<li><code>imageBrowser:removeItemsAtIndexes:</code></li>
+<li><code>imageBrowser:moveItemsAtIndexes:toIndex:</code></li>
+<li><code>numberOfGroupsInImageBrowser:</code></li>
+<li><code>imageBrowser:groupAtIndex:</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smbullets pretty-uls mini-browser" ref="basics/04_IKImageBrowserViewParts/2">
+<h2>IKImageBrowserItem</h2>
+
+<h3>Required:</h3>
+
+<ul>
+<li><code>imageRepresentationType</code></li>
+<li><code>imageUID</code></li>
+<li><code>imageRepresentation</code></li>
+</ul>
+
+
+<h3>Optional:</h3>
+
+<ul>
+<li><code>imageVersion</code></li>
+<li><code>imageTitle</code></li>
+<li><code>imageSubtitle</code></li>
+<li><code>isSelectable</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets smbullets pretty-uls" ref="basics/04_IKImageBrowserViewParts/3">
+<h2>IKImageBrowserDelegate</h2>
+
+<h3>Optional:</h3>
+
+<ul>
+<li><code>imageBrowser:backgroundWasRightClickedWithEvent:</code></li>
+<li><code>imageBrowser:cellWasRightClickedAtIndex:withEvent:</code></li>
+<li><code>imageBrowser:cellWasDoubleClickedAtIndex:</code></li>
+<li><code>imageBrowserSelectionDidChange:</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="browser/01_slide">
+<h1>Building An Image Browser</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_controller/1">
+<h1>ImageBrowserController.h</h1>
+
+<pre class="sh_C"><code>@interface ImageBrowserController : NSWindowController {
+
+    IBOutlet id mImageBrowser;
+    NSMutableArray * mImages;
+    NSMutableArray * mImportedImages;
+}
+
+- (IBAction) addImageButtonClicked:(id) sender;
+@end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_controller/2">
+<h1>ImageBrowserController.m</h1>
+
+<pre class="sh_C"><code>- (void) awakeFromNib
+{
+    mImages = [[NSMutableArray alloc] init];
+    mImportedImages = [[NSMutableArray alloc] init];
+
+    [mImageBrowser setAnimates:YES];
+}
+- (void) updateDatasource
+{
+    [mImages addObjectsFromArray:mImportedImages];
+    [mImportedImages removeAllObjects];
+    [mImageBrowser reloadData];
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/02_image_browser_controller/3">
+<h1>ImageBrowserController.m</h1>
+
+<h3>Data Source Methods</h3>
+
+<pre class="sh_C"><code>- (int) numberOfItemsInImageBrowser:(IKImageBrowserView *) view
+{
+    return [mImages count];
+}
+
+- (id) imageBrowser:(IKImageBrowserView *) view itemAtIndex:(int) index
+{
+    return [mImages objectAtIndex:index];
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_item/1">
+<h1>ImageBrowserItem.h</h1>
+
+<pre class="sh_C"><code>@interface ImageBrowserItem: NSObject {
+    NSString * mPath;
+}
+
+@property (nonatomic, copy) NSString *mPath;
+
+- (NSString *)imageRepresentationType
+- (id)  imageRepresentation
+- (NSString *) imageUID
+@end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content small" ref="browser/03_image_browser_item/2">
+<h1>ImageBrowserItem.m</h1>
+
+<pre class="sh_C"><code>
+@synthesize mPath;
+
+- (NSString *)  imageRepresentationType
+{
+    return IKImageBrowserPathRepresentationType;
+}
+
+- (id)  imageRepresentation
+{
+    return mPath;
+}
+
+- (NSString *) imageUID
+{
+    return mPath;
+}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="demo/01_slide/1">
+<h1>Hackie Demo</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="demo/01_slide/2">
 <h1>Bullet Points</h1>
 
 <ul>
@@ -80,6 +297,7 @@
 <li>second point</li>
 <li>third point</li>
 </ul>
+
 </div>
 </div>
 </div>

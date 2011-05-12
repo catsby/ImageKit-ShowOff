@@ -1,0 +1,74 @@
+/* @override http://localhost:9090/file/style.css */
+
+body {
+	text-align: center;
+}
+
+.pretty-uls {
+	text-align: left;
+}
+
+.pretty-uls ul {
+	list-style: disc;
+	padding-left: 80px;
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+.pretty-uls ul li {
+	text-align: left;
+}
+
+.ship-it.content::after {
+      position: absolute;
+      right: 15px;
+      bottom: 200px;
+      content: url('end/ship_it_squirrel.png');
+}
+
+.ship-it h1 {
+	position: absolute;
+    top: 160px;
+    left: 15px
+}
+
+.ship-it {
+	padding: 15px;
+}
+
+.images img {
+	vertical-align: top;
+}
+
+.content h1,
+.content h2 {
+  	background:#333;
+	padding: 10px;
+	color: white;
+}
+
+.content h3 {
+	text-align: left;
+	padding-left: 15px;
+}
+
+.mini-browser-1.content::after {
+      position: absolute;
+      right: 10px;
+      bottom: 220px;
+      content: url('basics/imagebrowser_02_thumb.jpg');
+}
+.mini-browser.content::after {
+      position: absolute;
+      right: 10px;
+      bottom: 275px;
+      content: url('basics/imagebrowser_02_thumb.jpg');
+}
+
+.mini-browser.content ul li {
+	width: 575px;
+}
+
+pre {
+	text-align: left;
+}
