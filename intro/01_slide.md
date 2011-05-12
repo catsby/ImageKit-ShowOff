@@ -15,6 +15,7 @@
 * Adjust images, apply color effects, view metadata
 * Display and arrange large numbers of images
 * Run slideshows
+* _Zoooooooooom_
 * Take a snapshot with an iSight or other digital camera
 * Save images in a variety of file formats
 * Browse Core Image filters and preview their effects
